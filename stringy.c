@@ -1,5 +1,15 @@
 #include <stdio.h>
 #include <string.h>
+void print_char(char c) {
+  printf("%c - %hhu\n", c, c);
+}
+void print_string(char *s, int n) {
+  char *cp = s;
+  for (int i = 0; i < n; i ++) {
+    print_char(*cp ++);
+  }
+  printf("\n");
+}
 int mystrlen(char *s) {
   int length = 0;
   for (char *cp = s; *cp; cp ++) {
