@@ -39,10 +39,9 @@ int main() {
   printf("%s\n", joe);
   char greet0[50] = "hello my name is ";
   char greet1[50] = "hello my name is ";
-  char name0[] = "bobby";
-  char name1[] = "bobby";
-  strcat(greet0, name0);
-  mystrcat(greet1, name1);
+  char name[] = "bobby";
+  strcat(greet0, name);
+  mystrcat(greet1, name);
   printf("%s\n", greet0);
   printf("%s\n", greet1);
   return 0;
