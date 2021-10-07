@@ -23,6 +23,13 @@ char *mystrcpy(char *dest, char *source) {
   while ((*dp ++ = *sp ++));
   return dest;
 }
+char *mystrcat(char *dest, char *source) {
+  char *dp = dest;
+  char *sp = source;
+  while (*++ dp);
+  while ((*dp ++ = *sp ++));
+  return dest;
+}
 int main() {
   printf("the length of 'hello' is %lu\n", strlen("hello"));
   printf("the length of 'hello' is %d\n", mystrlen("hello"));
@@ -32,5 +39,13 @@ int main() {
   strcpy(joe, "hello");
   printf("%s\n", bob);
   printf("%s\n", joe);
+  char greet0[50] = "hello my name is ";
+  char greet1[50] = "hello my name is ";
+  char name0[] = "bobby";
+  char name1[] = "bobby";
+  strcat(greet0, name0);
+  mystrcat(greet1, name1);
+  printf("%s\n", greet0);
+  printf("%s\n", greet1);
   return 0;
 }
