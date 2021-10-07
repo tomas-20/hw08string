@@ -7,12 +7,10 @@ int mystrlen(char *s) {
   }
   return length;
 }
-char *mystrncpy(char *dest, char *source, int size) {
+char *mystrcpy(char *dest, char *source) {
   char *dp = dest;
   char *sp = source;
-  for (int i = 0; i < size; i ++) {
-    *dp ++ = *sp ++;
-  }
+  while ((*dp ++ = *sp ++));
   return dest;
 }
 int main() {
@@ -20,8 +18,8 @@ int main() {
   printf("the length of 'hello' is %d\n", mystrlen("hello"));
   char bob[10];
   char joe[10];
-  strncpy(bob, "hello", 5);
-  mystrncpy(joe, "hello", 5);
+  mystrcpy(bob, "hello");
+  strcpy(joe, "hello");
   printf("%s\n", bob);
   printf("%s\n", joe);
   return 0;
