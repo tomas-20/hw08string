@@ -25,10 +25,8 @@ char *mystrcpy(char *dest, char *source) {
 }
 char *mystrcat(char *dest, char *source) {
   char *dp = dest;
-  char *sp = source;
   while (*++ dp);
-  while ((*dp ++ = *sp ++));
-  return dest;
+  return mystrcpy(dp, source);
 }
 int main() {
   printf("the length of 'hello' is %lu\n", strlen("hello"));
