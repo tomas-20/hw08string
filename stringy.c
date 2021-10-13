@@ -20,7 +20,10 @@ int mystrlen(char *s) {
 }
 char *mystrcpy(char *dest, char *source) {
   char *output = dest;
-  while ((*dest ++ = *source ++));
+  while ((*dest = *source)) {
+    dest ++;
+    source ++;
+  }
   return output;
 }
 char *mystrcat(char *dest, char *source) {
