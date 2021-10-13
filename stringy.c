@@ -19,9 +19,8 @@ int mystrlen(char *s) {
   return length;
 }
 char *mystrcpy(char *dest, char *source) {
-  char *dp = dest;
-  char *sp = source;
-  while ((*dp ++ = *sp ++));
+  char *output = dest;
+  while ((*dest ++ = *source ++));
   return dest;
 }
 char *mystrcat(char *dest, char *source) {
