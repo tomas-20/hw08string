@@ -56,6 +56,9 @@ int mystrcmp(char *a, char *b) {
 void testcmp(char *a, char *b) {
   printf("comparing %s and %s: %d %d\n", a, b, strcmp(a, b), mystrcmp(a, b));
 }
+void printpointer(char *p) {
+  printf("%p points to %c\n", p, *p);
+}
 int main() {
   printf("the length of 'hello' is %lu\n", strlen("hello"));
   printf("the length of 'hello' is %d\n", mystrlen("hello"));
@@ -79,5 +82,11 @@ int main() {
   testcmp("joe", "bob");
   testcmp("wab", "wabaloo");
   testcmp("wabaloo", "wab");
+  char *p = strchr("hello", 'l');
+  printpointer(p);
+  char a = 'a';
+  char b = 'b';
+  printpointer(&a);
+  printpointer(&b);
   return 0;
 }
