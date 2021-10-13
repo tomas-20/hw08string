@@ -24,9 +24,10 @@ char *mystrcpy(char *dest, char *source) {
   return dest;
 }
 char *mystrcat(char *dest, char *source) {
-  char *dp = dest;
-  while (*++ dp);
-  return mystrcpy(dp, source);
+  char *output = dest;
+  while (*++ dest);
+  mystrcpy(dest, source);
+  return output;
 }
 int charcmp(char a, char b) {
   if (a < b) {
