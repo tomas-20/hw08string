@@ -46,12 +46,6 @@ int mystrcmp(char *a, char *b) {
     a ++;
     b ++;
   }
-  if (!*a) {
-    return -1;
-  }
-  if (!*b) {
-    return 1;
-  }
   return charcmp(*a, *b);
 }
 char *mystrchr(char *s, char c) {
