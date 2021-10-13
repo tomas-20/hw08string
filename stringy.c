@@ -53,6 +53,15 @@ int mystrcmp(char *a, char *b) {
   }
   return charcmp(*a, *b);
 }
+char *mystrchar(char *s, char c) {
+  while (*s) {
+    if (*s == c) {
+      return s;
+    }
+    s ++;
+  }
+  return NULL;
+}
 void testcmp(char *a, char *b) {
   printf("comparing %s and %s: %d %d\n", a, b, strcmp(a, b), mystrcmp(a, b));
 }
@@ -82,11 +91,9 @@ int main() {
   testcmp("joe", "bob");
   testcmp("wab", "wabaloo");
   testcmp("wabaloo", "wab");
-  char *p = strchr("hello", 'l');
-  printpointer(p);
-  char a = 'a';
-  char b = 'b';
-  printpointer(&a);
-  printpointer(&b);
+  char *pointer = strchr("hello", 'l');
+  char *apuntador = mystrchar("hello", 'l');
+  printpointer(pointer);
+  printpointer(apuntador);
   return 0;
 }
