@@ -25,7 +25,9 @@ char *mystrcpy(char *dest, char *source) {
 }
 char *mystrcat(char *dest, char *source) {
   char *output = dest;
-  while (*++ dest);
+  while (*dest) {
+    dest ++;
+  }
   mystrcpy(dest, source);
   return output;
 }
@@ -66,13 +68,19 @@ int main() {
   strcpy(joe, "hello");
   printf("%s\n", bob);
   printf("%s\n", joe);
+  char name[] = "bobby";
   char greet0[50] = "hello my name is ";
   char greet1[50] = "hello my name is ";
-  char name[] = "bobby";
   strcat(greet0, name);
   mystrcat(greet1, name);
   printf("%s\n", greet0);
   printf("%s\n", greet1);
+  char empty0[50] = "";
+  char empty1[50] = "";
+  strcat(empty0, name);
+  mystrcat(empty1, name);
+  printf("%s\n", empty0);
+  printf("%s\n", empty1);
   testcmp("apple", "orange");
   testcmp("orange", "apple");
   testcmp("apple", "apple");
