@@ -21,7 +21,7 @@ int mystrlen(char *s) {
 char *mystrcpy(char *dest, char *source) {
   char *output = dest;
   while ((*dest ++ = *source ++));
-  return dest;
+  return output;
 }
 char *mystrcat(char *dest, char *source) {
   char *output = dest;
