@@ -37,6 +37,25 @@ int charcmp(char a, char b) {
   }
   return 0;
 }
+int mystrcmp(char *a, char *b) {
+  while (*a == *b) {
+    if (!*a) {
+      return 0;
+    }
+    a ++;
+    b ++;
+  }
+  if (!*a) {
+    return -1;
+  }
+  if (!*b) {
+    return 1;
+  }
+  return charcmp(*a, *b);
+}
+void testcmp(char *a, char *b) {
+  printf("comparing %s and %s: %d %d\n", a, b, strcmp(a, b), mystrcmp(a, b));
+}
 int main() {
   printf("the length of 'hello' is %lu\n", strlen("hello"));
   printf("the length of 'hello' is %d\n", mystrlen("hello"));
@@ -53,8 +72,12 @@ int main() {
   mystrcat(greet1, name);
   printf("%s\n", greet0);
   printf("%s\n", greet1);
-  printf("comparing a and b: %d\n", charcmp('a', 'b'));
-  printf("comparing b and a: %d\n", charcmp('b', 'a'));
-  printf("comparing e and e: %d\n", charcmp('e', 'e'));
+  testcmp("apple", "orange");
+  testcmp("orange", "apple");
+  testcmp("apple", "apple");
+  testcmp("bob", "joe");
+  testcmp("joe", "bob");
+  testcmp("wab", "wabaloo");
+  testcmp("wabaloo", "wab");
   return 0;
 }
