@@ -12,8 +12,9 @@ void print_string(char *s, int n) {
 }
 int mystrlen(char *s) {
   int length = 0;
-  for (char *cp = s; *cp; cp ++) {
+  while (*s) {
     length ++;
+    s ++;
   }
   return length;
 }
@@ -53,7 +54,7 @@ int mystrcmp(char *a, char *b) {
   }
   return charcmp(*a, *b);
 }
-char *mystrchar(char *s, char c) {
+char *mystrchr(char *s, char c) {
   while (*s) {
     if (*s == c) {
       return s;
@@ -92,7 +93,7 @@ int main() {
   testcmp("wab", "wabaloo");
   testcmp("wabaloo", "wab");
   char *pointer = strchr("hello", 'l');
-  char *apuntador = mystrchar("hello", 'l');
+  char *apuntador = mystrchr("hello", 'l');
   printpointer(pointer);
   printpointer(apuntador);
   return 0;
