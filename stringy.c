@@ -28,6 +28,15 @@ char *mystrcat(char *dest, char *source) {
   while (*++ dp);
   return mystrcpy(dp, source);
 }
+int charcmp(char a, char b) {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+}
 int main() {
   printf("the length of 'hello' is %lu\n", strlen("hello"));
   printf("the length of 'hello' is %d\n", mystrlen("hello"));
@@ -44,5 +53,8 @@ int main() {
   mystrcat(greet1, name);
   printf("%s\n", greet0);
   printf("%s\n", greet1);
+  printf("comparing a and b: %d\n", charcmp('a', 'b'));
+  printf("comparing b and a: %d\n", charcmp('b', 'a'));
+  printf("comparing e and e: %d\n", charcmp('e', 'e'));
   return 0;
 }
