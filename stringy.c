@@ -29,24 +29,18 @@ char *mystrcat(char *dest, char *source) {
   mystrcpy(dest, source);
   return output;
 }
-int charcmp(char a, char b) {
-  if (a < b) {
-    return -1;
-  }
-  if (a > b) {
-    return 1;
-  }
-  return 0;
-}
 int mystrcmp(char *a, char *b) {
-  while (*a == *b) {
-    if (!*a) {
-      return 0;
+  while (*a || *b) {
+    if (*a < *b) {
+      return -1;
+    }
+    if (*a > *b) {
+      return 1;
     }
     a ++;
     b ++;
   }
-  return charcmp(*a, *b);
+  return 0;
 }
 char *mystrchr(char *s, char c) {
   while (*s) {
