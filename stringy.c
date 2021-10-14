@@ -55,6 +55,12 @@ int mystrcmp(char *a, char *b) {
   return 0;
 }
 char *mystrchr(char *s, char c) {
+  if (c == 0) {
+    while (*s) {
+      s ++;
+    }
+    return s;
+  }
   while (*s) {
     if (*s == c) {
       return s;
