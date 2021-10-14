@@ -26,10 +26,9 @@ char *mystrcat(char *dest, char *source) {
 }
 char *mystrncpy(char *dest, char *source, int n) {
   char *output = dest;
-  while ((*dest = *source) && n > 0) {
+  while ((*dest = *source) && -- n > 0) {
     dest ++;
     source ++;
-    n --;
   }
   return output;
 }
@@ -38,7 +37,7 @@ char *mystrncat(char *dest, char *source, int n) {
   while (*dest) {
     dest ++;
   }
-  mystrncpy(dest, source, n - 1);
+  mystrncpy(dest, source, n);
   return output;
 }
 int mystrcmp(char *a, char *b) {
