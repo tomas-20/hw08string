@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 int mystrlen(char *s) {
   int length = 0;
   while (*s) {
