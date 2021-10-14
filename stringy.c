@@ -38,7 +38,7 @@ char *mystrncat(char *dest, char *source, int n) {
   while (*dest) {
     dest ++;
   }
-  mystrncpy(dest, source, n);
+  mystrncpy(dest, source, n - 1);
   return output;
 }
 int mystrcmp(char *a, char *b) {
